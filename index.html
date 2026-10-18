@@ -38,8 +38,6 @@ section{padding:54px 18px;max-width:920px;margin:auto}
 .photo{min-height:155px;border:1px dashed #d8b568aa;border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;padding:15px;background:#ffffff08;color:#f7dca0;overflow:hidden;position:relative}
 .photo img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0}
 .photo span{position:relative;z-index:1;background:#310611bb;padding:8px;border-radius:8px}
-input[type=file]{display:none}
-.upload{display:block;text-align:center;margin:15px auto 0;cursor:pointer;width:max-content;max-width:100%}
 .mapbox{text-align:center}
 footer{text-align:center;padding:32px 18px 45px;background:#26030d;color:#f4d998;line-height:1.9}
 .small{font-size:13px;color:#f4dfba}
@@ -84,12 +82,11 @@ footer{text-align:center;padding:32px 18px 45px;background:#26030d;color:#f4d998
 </section>
 <section id="gallery">
   <h2 class="section-title">हमारी यादें</h2>
-  <p class="lead">यहाँ वर-वधू की अपनी पसंदीदा तस्वीरें जोड़ें। नीचे बटन दबाकर मोबाइल से फोटो चुनें।</p>
+  <p class="lead">वर-वधू की कुछ खूबसूरत यादें</p>
   <div class="gallery" id="galleryGrid">
-    <label class="photo"><span>＋ फोटो 1 जोड़ें<input type="file" accept="image/*" /></span></label>
-    <label class="photo"><span>＋ फोटो 2 जोड़ें<input type="file" accept="image/*" /></span></label>
+    <div class="photo"><img src="1733348704770.jpg" alt="वर की तस्वीर" loading="lazy"></div>
+    <div class="photo"><img src="file_0000000029748208a83340bcad56d00d~2.jpg" alt="वधू की तस्वीर" loading="lazy"></div>
   </div>
-  <p class="small" style="text-align:center">ध्यान दें: चुनी गई तस्वीरें इस डेमो में आपके डिवाइस पर दिखेंगी; वेबसाइट पर सभी मेहमानों को दिखाने के लिए तस्वीरें वेबसाइट में अलग से अपलोड करनी होंगी।</p>
 </section>
 <section id="venue">
   <h2 class="section-title">विवाह स्थल</h2>
@@ -124,20 +121,6 @@ footer{text-align:center;padding:32px 18px 45px;background:#26030d;color:#f4d998
 <script>
 const invitationText = "॥ श्री राधे कृष्ण ॥\\nशुभ विवाह: वेंकटेश कुमार (बिट्टू) ♥ मुस्कान कुमारी (छोटी)\\n18 नवंबर: तिलक एवं मटकोर\\n19 नवंबर: मेहंदी एवं मड़वा\\n20 नवंबर: हल्दी एवं भतवान\\n21 नवंबर: बारात एवं विवाह\\nविवाह स्थल: College More, DAN Public School के पास, टिकारी, गया जी, बिहार।";
 const feedback = document.getElementById('feedback');
-document.querySelectorAll('.photo input').forEach(input => {
-  input.addEventListener('change', () => {
-    const file = input.files && input.files[0];
-    if (!file) return;
-    const label = input.closest('.photo');
-    let img = label.querySelector('img');
-    if (!img) { img = document.createElement('img'); label.prepend(img); }
-    const reader = new FileReader();
-    reader.onload = e => { img.src = e.target.result; };
-    reader.readAsDataURL(file);
-    const span = label.querySelector('span');
-    span.textContent = file.name;
-  });
-});
 document.getElementById('musicBtn').addEventListener('click', async () => {
   const audio = document.getElementById('bhajan');
   const btn = document.getElementById('musicBtn');
