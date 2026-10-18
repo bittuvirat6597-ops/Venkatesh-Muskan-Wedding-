@@ -43,6 +43,11 @@ footer{text-align:center;padding:32px 18px 45px;background:#26030d;color:#f4d998
 .small{font-size:13px;color:#f4dfba}
 @media(min-width:650px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.photo{min-height:210px}.event{grid-template-columns:80px 1fr}}
 @media(prefers-reduced-motion:no-preference){.frame{animation:rise 1s ease-out both}@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}}
+
+.calendar-wrap{background:linear-gradient(145deg,#fdf8ff,#f4e9ff);color:#32153d;border-radius:28px;padding:22px 16px;box-shadow:0 18px 45px #18020a55}
+.calendar-top{text-align:center;margin-bottom:20px;color:#54209a}.calendar-top .kicker{letter-spacing:5px;font:700 12px Arial,sans-serif}.calendar-top h2{font-size:clamp(34px,8vw,54px);font-weight:400;margin:8px 0 0;color:#32153d}
+.cal-month{display:flex;justify-content:space-between;align-items:center;margin:8px 4px 20px;font-size:21px}.cal-month small{font:12px Arial,sans-serif;letter-spacing:2px;color:#8a7896}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;text-align:center}.cal-grid .dow{font:12px Arial,sans-serif;color:#8a7896;padding:8px 0}.cal-day{min-height:42px;display:grid;place-items:center;border-radius:12px;color:#786986;font:16px Arial,sans-serif;position:relative}.cal-day.event-day{background:#b65a00;color:white;font-weight:bold}.cal-day.mehndi{background:#aa7600}.cal-day.wedding{background:#b4103c;outline:2px solid #6b27bd;outline-offset:2px}.cal-events{border-top:1px solid #e2d8e9;margin-top:22px;padding-top:14px}.cal-event{display:grid;grid-template-columns:30px 14px 1fr;gap:8px;align-items:center;padding:10px 0;font-size:14px}.dot{width:12px;height:12px;border-radius:50%;background:#b65a00}.dot.gold{background:#aa7600}.dot.red{background:#b4103c}.countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:18px}.count-box{background:#eee5f7;border-radius:18px;text-align:center;padding:14px 3px;color:#6427b7}.count-box strong{display:block;font-size:clamp(24px,6vw,38px);font-weight:400}.count-box span{font:10px Arial,sans-serif;letter-spacing:2px;color:#837294}.scratch-card{background:linear-gradient(135deg,#fff9fc,#fce4ed);border-radius:28px;padding:24px 14px;color:#291528;text-align:center}.scratch-card .big-date{font-size:clamp(76px,18vw,120px);line-height:1;color:#e83d6b;margin:20px 0 0}.scratch-card .month-label{letter-spacing:6px;font:700 15px Arial,sans-serif;margin:12px 0 22px}.scratch-stage{height:170px;max-width:500px;margin:0 auto 12px;border-radius:18px;position:relative;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px #f3d4df}.scratch-message{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px}.scratch-message strong{font-size:22px;color:#e83d6b}.scratch-message span{margin-top:8px;color:#786b7b}.scratch-stage canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}.scratch-hint{font-size:13px;color:#7c687b;margin:8px 0 0}
 </style>
 </head>
 <body>
@@ -53,12 +58,13 @@ footer{text-align:center;padding:32px 18px 45px;background:#26030d;color:#f4d998
     <div class="eyebrow">श्री राधा-कृष्ण की असीम कृपा से</div>
     <div class="subtitle">सप्रेम आमंत्रण • शुभ विवाह</div>
     <h1>वेंकटेश कुमार</h1>
-    <div class="subtitle">(बिट्टू)</div>
+    <p class="lead" style="margin:6px 0 14px">Son of Rajesh Sharma and Anita Devi</p>
     <div class="amp">♥</div>
     <h1>मुस्कान कुमारी</h1>
-    <div class="subtitle">(छोटी)</div>
+    <p class="lead" style="margin:6px 0 14px">Daughter of Santosh Sharma and Manjusha Devi</p>
     <p class="lead">दो दिलों का मिलन, दो परिवारों का संगम।<br>आप सपरिवार पधारकर वर-वधू को अपना स्नेह एवं आशीर्वाद प्रदान करें।</p>
     <div class="date">21 नवंबर 2026 · शुभ विवाह</div>
+    <p class="lead" style="margin-top:14px">संपर्क: <a href="tel:7766882166">7766882166</a></p>
     <div class="btns">
       <a class="btn" href="#events">कार्यक्रम देखें</a>
       <a class="btn secondary" href="#venue">विवाह स्थल</a>
@@ -72,6 +78,10 @@ footer{text-align:center;padding:32px 18px 45px;background:#26030d;color:#f4d998
   <h2 class="section-title">मंगलमय निमंत्रण</h2>
   <p class="lead">॥ वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ॥<br>शुभ घड़ी आई है, खुशियों की शहनाई है।<br>हमारे परिवार के इस पावन अवसर पर आपकी उपस्थिति हमारे लिए सौभाग्य होगी।</p>
 </section>
+<section id="scratch">
+  <div class="calendar-top"><div class="kicker" style="color:#e83d6b">THE BIG DAY</div><h2>Scratch to reveal</h2></div>
+  <div class="scratch-card"><div style="font-size:13px;letter-spacing:3px;color:#8b7183">THE BIG DAY</div><div class="scratch-stage" id="scratchStage"><div class="scratch-message"><strong style="font-size:clamp(34px,9vw,54px)">21 नवंबर 2026</strong><span style="font-size:18px">Venkatesh ♥ Muskan</span><span>शनिवार · बारात एवं शुभ विवाह</span></div><canvas id="scratchCanvas" aria-label="विवाह की तारीख देखने के लिए यहाँ रगड़ें"></canvas></div><p class="scratch-hint">☝️ उँगली से रगड़ें और विवाह की तारीख देखें</p></div>
+</section>
 <section id="events">
   <h2 class="section-title">शुभ कार्यक्रम</h2>
   <p class="lead">आपसे सादर अनुरोध है कि सभी मंगल अवसरों पर पधारकर समारोह की शोभा बढ़ाएँ।</p>
@@ -80,12 +90,23 @@ footer{text-align:center;padding:32px 18px 45px;background:#26030d;color:#f4d998
   <div class="card event"><div class="event-icon">🌼</div><div><h3>हल्दी एवं भतवान</h3><p>शुक्रवार, 20 नवंबर 2026</p></div></div>
   <div class="card event"><div class="event-icon">♥</div><div><h3>बारात एवं विवाह</h3><p>शनिवार, 21 नवंबर 2026</p></div></div>
 </section>
-<section id="gallery">
-  <h2 class="section-title">हमारी यादें</h2>
-  <p class="lead">वर-वधू की कुछ खूबसूरत यादें</p>
-  <div class="gallery" id="galleryGrid">
-    <div class="photo"><img src="1733348704770.jpg" alt="वर की तस्वीर" loading="lazy"></div>
-    <div class="photo"><img src="file_0000000029748208a83340bcad56d00d~2.jpg" alt="वधू की तस्वीर" loading="lazy"></div>
+
+
+<section id="calendar">
+  <div class="calendar-top"><div class="kicker">MARK THESE DAYS</div><h2>November 2026</h2></div>
+  <div class="calendar-wrap">
+    <div class="cal-month"><span>November</span><small>2026 · TEKARI, GAYA</small></div>
+    <div class="cal-grid" aria-label="November 2026 calendar">
+      <div class="dow">SUN</div><div class="dow">MON</div><div class="dow">TUE</div><div class="dow">WED</div><div class="dow">THU</div><div class="dow">FRI</div><div class="dow">SAT</div>
+      <div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day">4</div><div class="cal-day">5</div><div class="cal-day">6</div><div class="cal-day">7</div>
+      <div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day">12</div><div class="cal-day">13</div><div class="cal-day">14</div>
+      <div class="cal-day">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day event-day">18</div><div class="cal-day event-day mehndi">19</div><div class="cal-day event-day">20</div><div class="cal-day event-day wedding">21</div>
+      <div class="cal-day">22</div><div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div><div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div>
+      <div class="cal-day">29</div><div class="cal-day">30</div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div>
+    </div>
+    <div class="cal-events"><div class="cal-event"><b>18</b><i class="dot"></i><span>तिलक एवं मटकोर</span></div><div class="cal-event"><b>19</b><i class="dot gold"></i><span>मेहंदी एवं मड़वा</span></div><div class="cal-event"><b>20</b><i class="dot"></i><span>हल्दी एवं भतवान</span></div><div class="cal-event"><b>21</b><i class="dot red"></i><span>बारात एवं विवाह</span></div></div>
+    <div class="countdown"><div class="count-box"><strong id="days">--</strong><span>DAYS</span></div><div class="count-box"><strong id="hours">--</strong><span>HOURS</span></div><div class="count-box"><strong id="mins">--</strong><span>MINS</span></div><div class="count-box"><strong id="secs">--</strong><span>SECS</span></div></div>
+    <p style="text-align:center;color:#887693;margin:18px 0 0">बारात के शुभ आगमन तक</p>
   </div>
 </section>
 <section id="venue">
@@ -112,14 +133,18 @@ footer{text-align:center;padding:32px 18px 45px;background:#26030d;color:#f4d998
   <div>॥ श्री राधे कृष्ण ॥</div>
   <h2 style="font-weight:500">वेंकटेश ♥ मुस्कान</h2>
   <p>आपका स्नेह और आशीर्वाद ही हमारा सबसे अनमोल उपहार है।</p>
-  <div class="small">बिट्टू एवं छोटी के परिवार की ओर से सादर आमंत्रण</div>
+  <div class="small">परिवार की ओर से सादर आमंत्रण</div>
 </footer>
 <audio id="bhajan" preload="none" loop>
   <!-- अपनी वैध MP3 फ़ाइल को bhajan.mp3 नाम देकर इसी HTML के साथ अपलोड करें -->
   <source src="bhajan.mp3" type="audio/mpeg">
 </audio>
 <script>
-const invitationText = "॥ श्री राधे कृष्ण ॥\\nशुभ विवाह: वेंकटेश कुमार (बिट्टू) ♥ मुस्कान कुमारी (छोटी)\\n18 नवंबर: तिलक एवं मटकोर\\n19 नवंबर: मेहंदी एवं मड़वा\\n20 नवंबर: हल्दी एवं भतवान\\n21 नवंबर: बारात एवं विवाह\\nविवाह स्थल: College More, DAN Public School के पास, टिकारी, गया जी, बिहार।";
+
+function updateCountdown(){const target=new Date(2026,10,21,17,0,0).getTime();let diff=Math.max(0,target-Date.now());const vals={days:Math.floor(diff/86400000),hours:Math.floor(diff%86400000/3600000),mins:Math.floor(diff%3600000/60000),secs:Math.floor(diff%60000/1000)};Object.entries(vals).forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.textContent=String(val).padStart(2,'0')})}updateCountdown();setInterval(updateCountdown,1000);
+(function(){const canvas=document.getElementById('scratchCanvas'),stage=document.getElementById('scratchStage');if(!canvas||!stage)return;const ctx=canvas.getContext('2d');let drawing=false;function paint(){const r=stage.getBoundingClientRect(),dpr=window.devicePixelRatio||1;canvas.width=Math.max(1,Math.round(r.width*dpr));canvas.height=Math.max(1,Math.round(r.height*dpr));ctx.setTransform(dpr,0,0,dpr,0,0);ctx.globalCompositeOperation='source-over';ctx.fillStyle='#d8b568';ctx.fillRect(0,0,r.width,r.height);ctx.fillStyle='#4b0b1e';ctx.font='bold 19px Georgia, serif';ctx.textAlign='center';ctx.fillText('यहाँ रगड़कर देखें ✨',r.width/2,r.height/2);ctx.globalCompositeOperation='destination-out'}function rub(e){if(!drawing)return;const r=canvas.getBoundingClientRect();ctx.beginPath();ctx.arc(e.clientX-r.left,e.clientY-r.top,22,0,Math.PI*2);ctx.fill()}canvas.addEventListener('pointerdown',e=>{drawing=true;canvas.setPointerCapture(e.pointerId);rub(e)});canvas.addEventListener('pointermove',rub);canvas.addEventListener('pointerup',()=>{drawing=false;const data=ctx.getImageData(0,0,canvas.width,canvas.height).data;let clear=0;for(let i=3;i<data.length;i+=16)if(data[i]===0)clear++;if(clear>data.length/16*.42)canvas.style.opacity='0'});canvas.addEventListener('pointercancel',()=>drawing=false);paint();window.addEventListener('resize',paint)})();
+
+const invitationText = "॥ श्री राधे कृष्ण ॥\\nशुभ विवाह: वेंकटेश कुमार ♥ मुस्कान कुमारी\\n18 नवंबर: तिलक एवं मटकोर\\n19 नवंबर: मेहंदी एवं मड़वा\\n20 नवंबर: हल्दी एवं भतवान\\n21 नवंबर: बारात एवं विवाह\\nविवाह स्थल: College More, DAN Public School के पास, टिकारी, गया जी, बिहार।\nवर के पिता: Rajesh Sharma; माता: Anita Devi\nवधू के पिता: Santosh Sharma; माता: Manjusha Devi\nसंपर्क: 7766882166";
 const feedback = document.getElementById('feedback');
 document.getElementById('musicBtn').addEventListener('click', async () => {
   const audio = document.getElementById('bhajan');
